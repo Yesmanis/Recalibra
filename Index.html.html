@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recalibra — Protocolo de 21 días para recuperar tu cuerpo de la ansiedad crónica</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parch:   #F7F2E8;
+  --parch2:  #EDE6D6;
+  --parch3:  #E3D9C4;
+  --warm:    #FAF6EE;
+  --sage:    #4C7658;
+  --sage-l:  #6B9978;
+  --sage-xl: #C4D9C9;
+  --sage-bg: #EDF4EF;
+  --gold:    #9E7B3A;
+  --gold-l:  #B89050;
+  --gold-xl: #E8D9B8;
+  --ink:     #2A3028;
+  --ink-m:   #4A5548;
+  --ink-l:   #7A8878;
+  --border:  rgba(76,118,88,0.18);
+  --border2: rgba(158,123,58,0.2);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--warm);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+.display  { font-family: 'Playfair Display', Georgia, serif; line-height: 1.1; letter-spacing: -0.02em; }
+.serif    { font-family: 'Playfair Display', Georgia, serif; }
+.container      { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  background: linear-gradient(180deg, #EAF0EB 0%, var(--warm) 60%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(196,217,201,0.45) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage-l);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 48px; height: 1px;
+  background: var(--sage-l);
+  opacity: 0.5;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(54px, 10vw, 100px);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.05;
+  position: relative; z-index: 1;
+}
+.hero-title em { font-style: italic; color: var(--sage); }
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-m);
+  margin-bottom: 20px;
+  max-width: 540px;
+  position: relative; z-index: 1;
+}
+.hero-tagline {
+  font-size: 15px;
+  color: var(--ink-l);
+  margin-bottom: 52px;
+  font-weight: 300;
+  position: relative; z-index: 1;
+}
+.hero-tagline strong { color: var(--sage); font-weight: 500; }
+
+/* ── HERO BUNDLE PREVIEW ── */
+.hero-bundle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.bundle-pill {
+  background: var(--parch2);
+  border: 1px solid var(--border2);
+  border-radius: 40px;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--sage);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 18px 52px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(76,118,88,0.25);
+}
+.btn-primary:hover { background: var(--sage-l); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(76,118,88,0.3); }
+
+.btn-ghost {
+  display: inline-block;
+  border: 1.5px solid var(--sage);
+  color: var(--sage);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 52px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-ghost:hover { background: var(--sage-bg); }
+
+.cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.cta-note { font-size: 12px; color: var(--ink-l); font-family: 'Inter', sans-serif; }
+
+/* ── DIVIDERS ── */
+.divider { width: 1px; height: 72px; background: linear-gradient(to bottom, transparent, var(--sage-xl), transparent); margin: 0 auto; }
+.divider-h { height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); }
+
+/* ── SECTION BASE ── */
+section { padding: 96px 0; }
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage-l);
+  margin-bottom: 18px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.section-title em { font-style: italic; color: var(--sage); }
+.section-body { font-size: 17px; color: var(--ink-m); line-height: 1.8; max-width: 580px; }
+
+/* ── PAIN ── */
+.pain { background: var(--parch2); padding: 96px 0; }
+
+.pain-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 4.5vw, 44px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pain-lead em { font-style: italic; color: var(--gold); }
+.pain-body { color: var(--ink-m); font-size: 17px; line-height: 1.8; margin-bottom: 52px; max-width: 600px; }
+
+.symptom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-bottom: 52px;
+}
+@media(max-width: 580px) { .symptom-grid { grid-template-columns: 1fr; } }
+
+.symptom-item {
+  background: var(--warm);
+  border: 1px solid var(--border2);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.symptom-item::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 16px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(158,123,58,0.1);
+  line-height: 1;
+}
+.symptom-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.symptom-desc { font-size: 14px; color: var(--ink-l); line-height: 1.65; }
+
+.pain-reframe {
+  border-left: 3px solid var(--gold);
+  background: #FBF6EC;
+  padding: 28px 36px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+/* ── SCIENCE ── */
+.science { background: var(--warm); }
+
+.axis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin: 48px 0;
+}
+@media(max-width: 640px) { .axis-grid { grid-template-columns: 1fr; } }
+
+.axis-item {
+  background: var(--sage-bg);
+  border: 1px solid var(--border);
+  padding: 36px 24px;
+  text-align: center;
+}
+.axis-icon { font-size: 34px; margin-bottom: 16px; display: block; }
+.axis-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px; font-weight: 700;
+  color: var(--ink); margin-bottom: 8px;
+}
+.axis-desc { font-size: 13px; color: var(--ink-l); line-height: 1.65; }
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+  margin-top: 8px;
+}
+@media(max-width: 580px) { .stats-row { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; } }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px; font-weight: 900;
+  color: var(--sage); line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label { font-size: 13px; color: var(--ink-l); line-height: 1.5; }
+
+/* ── BUNDLE ── */
+.bundle-section { background: var(--parch2); padding: 96px 0; }
+
+.bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin: 52px 0;
+}
+@media(max-width: 700px) { .bundle-grid { grid-template-columns: 1fr; } }
+
+.bundle-card {
+  background: var(--warm);
+  border: 1px solid var(--border2);
+  padding: 40px 28px;
+  text-align: center;
+  position: relative;
+}
+.bundle-card.featured {
+  background: var(--sage-bg);
+  border-color: var(--sage);
+  border-width: 1.5px;
+}
+.bundle-card-badge {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--sage);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+.bundle-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+.bundle-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--ink); margin-bottom: 12px;
+}
+.bundle-desc { font-size: 14px; color: var(--ink-l); line-height: 1.65; margin-bottom: 20px; }
+.bundle-features { list-style: none; text-align: left; display: grid; gap: 8px; }
+.bundle-features li {
+  font-size: 13px; color: var(--ink-m);
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.bundle-features li::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+
+.bundle-together {
+  background: var(--sage-bg);
+  border: 1px solid var(--border);
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.bundle-together-text { flex: 1; min-width: 220px; }
+.bundle-together-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--ink); margin-bottom: 6px;
+}
+.bundle-together-sub { font-size: 14px; color: var(--ink-l); }
+
+/* ── PROTOCOL ── */
+.protocol { background: var(--warm); }
+
+.phase-block { margin-bottom: 52px; }
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.phase-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 900;
+  color: var(--sage-xl);
+  line-height: 1; flex-shrink: 0;
+}
+.phase-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage-l); margin-bottom: 4px;
+}
+.phase-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--ink); line-height: 1.2;
+}
+.phase-days { font-size: 13px; color: var(--ink-l); margin-top: 2px; }
+
+.chapter-list { display: grid; gap: 2px; }
+.chapter-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  background: var(--parch2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+.chapter-item:hover { background: var(--sage-bg); border-color: var(--sage-l); }
+.chapter-num {
+  background: var(--sage-bg);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+  color: var(--sage);
+  border-right: 1px solid var(--border);
+}
+.chapter-content { padding: 20px 24px; }
+.chapter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-weight: 700;
+  color: var(--ink); margin-bottom: 4px;
+}
+.chapter-sub { font-size: 13px; color: var(--ink-l); }
+
+/* ── FOR WHO ── */
+.forwho { background: var(--parch2); padding: 96px 0; }
+
+.forwho-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 48px;
+}
+@media(max-width: 580px) { .forwho-grid { grid-template-columns: 1fr; } }
+
+.forwho-col { padding: 40px 32px; }
+.forwho-col.yes { background: var(--sage-bg); border: 1px solid var(--border); }
+.forwho-col.no  { background: var(--warm); border: 1px solid rgba(0,0,0,0.07); }
+
+.forwho-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 8px;
+}
+.forwho-label.green { color: var(--sage); }
+.forwho-label.muted { color: var(--ink-l); }
+.forwho-label::after { content: ''; flex: 1; height: 1px; background: currentColor; opacity: 0.25; }
+
+.forwho-item {
+  font-size: 15px; color: var(--ink-m);
+  line-height: 1.55; margin-bottom: 16px;
+  padding-left: 22px; position: relative;
+}
+.forwho-item::before { content: attr(data-mark); position: absolute; left: 0; font-weight: 700; }
+.forwho-col.yes .forwho-item::before { color: var(--sage); }
+.forwho-col.no  .forwho-item::before { color: var(--ink-l); }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--warm); }
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 52px;
+}
+@media(max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+.testimonial-card {
+  background: var(--parch2);
+  border: 1px solid var(--border2);
+  padding: 32px 28px;
+}
+.testimonial-stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+.testimonial-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 16px;
+  color: var(--ink); line-height: 1.65;
+  margin-bottom: 24px;
+}
+.testimonial-author { font-size: 13px; color: var(--ink-l); }
+.testimonial-author strong { color: var(--ink-m); font-weight: 500; display: block; margin-bottom: 2px; }
+.t-note { font-size: 11px; color: var(--ink-l); opacity: 0.6; margin-top: 36px; text-align: center; font-style: italic; }
+
+/* ── GUARANTEE ── */
+.guarantee { background: var(--sage-bg); padding: 80px 0; }
+.guarantee-box {
+  border: 1px solid var(--border);
+  background: var(--warm);
+  padding: 56px 48px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.guarantee-icon { font-size: 52px; margin-bottom: 20px; display: block; }
+.guarantee-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--ink); margin-bottom: 16px;
+}
+.guarantee-text { font-size: 16px; color: var(--ink-m); line-height: 1.8; }
+.guarantee-text strong { color: var(--sage); }
+
+/* ── PRICE ── */
+.pricing { background: var(--warm); padding: 96px 0; }
+
+.price-card {
+  border: 1.5px solid var(--border);
+  background: var(--parch2);
+  padding: 64px 48px;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.price-card::before {
+  content: 'ACCESO COMPLETO AL PROGRAMA';
+  position: absolute; top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--sage);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 5px 18px; white-space: nowrap;
+}
+.price-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 900;
+  color: var(--ink); margin-bottom: 6px;
+}
+.price-sub { font-size: 14px; color: var(--ink-l); margin-bottom: 36px; }
+
+.price-bundle-list {
+  background: var(--sage-bg);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  text-align: left;
+  display: grid; gap: 14px;
+}
+.price-bundle-item {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.price-bundle-icon { font-size: 20px; flex-shrink: 0; }
+.price-bundle-name {
+  font-weight: 500; color: var(--ink);
+  font-size: 15px; margin-bottom: 2px;
+}
+.price-bundle-sub { font-size: 12px; color: var(--ink-l); }
+
+.price-includes { list-style: none; text-align: left; margin-bottom: 36px; display: grid; gap: 10px; }
+.price-includes li {
+  font-size: 14px; color: var(--ink-m);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.price-includes li::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+
+.price-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 88px; font-weight: 900;
+  color: var(--sage); line-height: 1;
+  margin-bottom: 4px;
+}
+.price-amount span { font-size: 34px; vertical-align: super; font-weight: 400; }
+.price-once { font-size: 13px; color: var(--ink-l); margin-bottom: 36px; }
+.price-cta { width: 100%; display: block; text-align: center; }
+
+.price-security {
+  margin-top: 24px;
+  display: flex; justify-content: center;
+  gap: 20px; flex-wrap: wrap;
+}
+.security-item { font-size: 12px; color: var(--ink-l); display: flex; align-items: center; gap: 5px; }
+
+/* ── FAQ ── */
+.faq { background: var(--parch2); padding: 96px 0; }
+.faq-grid { margin-top: 48px; display: grid; gap: 3px; }
+.faq-item {
+  background: var(--warm);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+}
+.faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--ink); margin-bottom: 10px;
+}
+.faq-a { font-size: 15px; color: var(--ink-m); line-height: 1.75; }
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background: linear-gradient(180deg, var(--warm) 0%, #E5EDEA 100%);
+  padding: 120px 24px;
+  text-align: center;
+}
+.final-cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 7vw, 72px);
+  font-weight: 900; color: var(--ink);
+  line-height: 1.1; margin-bottom: 20px;
+}
+.final-cta-title em { font-style: italic; color: var(--sage); }
+.final-cta-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 20px;
+  color: var(--ink-m); margin-bottom: 48px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--parch3);
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-l);
+  border-top: 1px solid var(--border);
+}
+
+/* ── STICKY ── */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(247,242,232,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border2);
+  padding: 14px 24px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  z-index: 100; gap: 16px;
+  box-shadow: 0 -4px 24px rgba(76,118,88,0.1);
+}
+.sticky-text { font-size: 14px; color: var(--ink); font-family: 'Playfair Display', serif; font-style: italic; }
+.sticky-text strong { font-style: normal; font-weight: 700; }
+.sticky-price { font-size: 22px; font-weight: 700; color: var(--sage); font-family: 'Playfair Display', serif; }
+.sticky-cta {
+  background: var(--sage); color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 12px 28px; border-radius: 3px;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.15s;
+}
+.sticky-cta:hover { background: var(--sage-l); }
+@media(max-width: 500px) { .sticky-text { display: none; } }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media(prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+.text-center { text-align: center; }
+.text-center .section-body { margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <p class="hero-eyebrow">SaludIntegra_ · Protocolo de bienestar</p>
+
+  <h1 class="hero-title display">
+    Tu cuerpo sabe<br>
+    <em>cómo sanar.</em>
+  </h1>
+
+  <p class="hero-subtitle">
+    Solo necesita aprender a salir<br>del estado de alerta en el que lleva atrapado.
+  </p>
+
+  <p class="hero-tagline">
+    <strong>21 días.</strong> Neurociencia aplicada. Sin tecnicismos, sin magia.<br>
+    Solo un protocolo que funciona desde adentro.
+  </p>
+
+  <div class="hero-bundle">
+    <div class="bundle-pill">📖 Ebook completo</div>
+    <div class="bundle-pill">🎧 Audiolibro narrado</div>
+    <div class="bundle-pill">📋 Tracker de 21 días</div>
+  </div>
+
+  <div class="cta-group">
+    <a href="#comprar" class="btn-primary">Quiero recalibrar mi cuerpo</a>
+    <p class="cta-note">Acceso inmediato · $27 USD · Pago único · Sin suscripción</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ DOLOR ══════════ -->
+<section class="pain">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="pain-lead">
+        ¿Cuánto tiempo llevas<br>conviviendo con síntomas<br>que <em>no terminan de explicarse?</em>
+      </h2>
+      <p class="pain-body">
+        No en el sentido dramático. En el sentido cotidiano. Esa tensión de fondo que ya sientes como normal. Ese cuerpo que reacciona antes de que pase nada. Esa mente que no para aunque quieras que pare.
+      </p>
+    </div>
+
+    <div class="symptom-grid reveal">
+      <div class="symptom-item" data-num="01">
+        <p class="symptom-title">La mandíbula apretada</p>
+        <p class="symptom-desc">Amaneces con tensión en la mandíbula o dolor de cabeza. Tu cuerpo pasó la noche en guardia aunque tú dormías.</p>
+      </div>
+      <div class="symptom-item" data-num="02">
+        <p class="symptom-title">El estómago que habla primero</p>
+        <p class="symptom-desc">Gastritis, inflamación, tránsito alterado sin razón aparente. No es el alimento. Es el nervio vago en defensa permanente.</p>
+      </div>
+      <div class="symptom-item" data-num="03">
+        <p class="symptom-title">El sueño que no descansa</p>
+        <p class="symptom-desc">Duermes las horas pero te despiertas igual de cansada. El cortisol elevado fragmenta el sueño profundo antes de que llegues a él.</p>
+      </div>
+      <div class="symptom-item" data-num="04">
+        <p class="symptom-title">La mente que anticipa todo</p>
+        <p class="symptom-desc">El futuro ya ocurrió en tu cabeza — con todos los peores escenarios. Y tu cuerpo los vivió también, sin que nada hubiera pasado aún.</p>
+      </div>
+    </div>
+
+    <blockquote class="pain-reframe reveal">
+      "No es ansiedad en tu cabeza.<br>
+      Es ansiedad en tu cuerpo.<br>
+      Y hay una diferencia crucial entre las dos."
+    </blockquote>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ CIENCIA ══════════ -->
+<section class="science">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">El marco científico</p>
+      <h2 class="section-title">Tu sistema nervioso aprendió<br>a quedarse <em>encendido.</em></h2>
+      <p class="section-body">
+        La ansiedad crónica no es un rasgo de personalidad ni una debilidad. Es un patrón neurológico aprendido. Tu sistema simpático — el modo de alerta — se quedó activo más tiempo del necesario, y ahora tu cuerpo lo toma como estado por defecto.
+        <br><br>
+        Recalibra trabaja sobre los tres ejes del sistema nervioso autónomo que la ansiedad crónica desregula de forma directa y medible.
+      </p>
+    </div>
+
+    <div class="axis-grid reveal">
+      <div class="axis-item">
+        <span class="axis-icon">🧠</span>
+        <p class="axis-name">Nervio vago</p>
+        <p class="axis-desc">El canal principal del sistema parasimpático. Cuando su tono es bajo, el cuerpo no puede salir de la alerta por sí solo.</p>
+      </div>
+      <div class="axis-item">
+        <span class="axis-icon">🫀</span>
+        <p class="axis-name">Eje intestino-cerebro</p>
+        <p class="axis-desc">Más del 90% de la serotonina se produce en el intestino. La ansiedad crónica empobrece el microbioma que la genera.</p>
+      </div>
+      <div class="axis-item">
+        <span class="axis-icon">💤</span>
+        <p class="axis-name">Ciclo del cortisol</p>
+        <p class="axis-desc">La hormona del estrés tiene un ritmo circadiano. Cuando se desregula, el sueño profundo desaparece aunque duermas las horas.</p>
+      </div>
+    </div>
+
+    <div class="stats-row reveal">
+      <div>
+        <p class="stat-num">90%</p>
+        <p class="stat-label">de la serotonina se produce en el intestino, no en el cerebro</p>
+      </div>
+      <div>
+        <p class="stat-num">21</p>
+        <p class="stat-label">días son suficientes para iniciar cambios medibles en el tono vagal</p>
+      </div>
+      <div>
+        <p class="stat-num serif" style="font-style:italic; font-size:48px; color: var(--sage);">Tú</p>
+        <p class="stat-label">puedes activar el sistema parasimpático conscientemente. Hoy mismo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ BUNDLE ══════════ -->
+<section class="bundle-section">
+  <div class="container">
+    <div class="reveal text-center">
+      <p class="section-label">Lo que recibes</p>
+      <h2 class="section-title">Un programa completo.<br><em>Tres formatos para vivirlo.</em></h2>
+      <p class="section-body text-center">
+        Porque cada persona aprende diferente. Puedes leerlo, escucharlo o usarlo como guía diaria — o las tres cosas.
+      </p>
+    </div>
+
+    <div class="bundle-grid reveal">
+      <div class="bundle-card">
+        <span class="bundle-icon">📖</span>
+        <p class="bundle-name">Ebook completo</p>
+        <p class="bundle-desc">El programa escrito en su totalidad. Léelo a tu ritmo, subraya, vuelve cuando lo necesites.</p>
+        <ul class="bundle-features">
+          <li>8 capítulos con marco científico</li>
+          <li>Prácticas escritas por capítulo</li>
+          <li>Ejercicios de reflexión diarios</li>
+          <li>Acceso desde cualquier dispositivo</li>
+        </ul>
+      </div>
+
+      <div class="bundle-card featured">
+        <span class="bundle-card-badge">Más popular</span>
+        <span class="bundle-icon">🎧</span>
+        <p class="bundle-name">Audiolibro narrado</p>
+        <p class="bundle-desc">El ebook íntegro convertido en audio. Escúchalo mientras caminas, cocinas o te preparas para dormir.</p>
+        <ul class="bundle-features">
+          <li>28 minutos de narración completa</li>
+          <li>Ideal para quienes aprenden escuchando</li>
+          <li>Acceso desde Hotmart en móvil</li>
+        </ul>
+      </div>
+
+      <div class="bundle-card">
+        <span class="bundle-icon">📋</span>
+        <p class="bundle-name">Tracker de 21 días</p>
+        <p class="bundle-desc">Tu guía de seguimiento diario. Registra cada práctica, observa tus patrones, ve el progreso.</p>
+        <ul class="bundle-features">
+          <li>Una página por día durante 21 días</li>
+          <li>Espacio para reflexiones y ejercicios</li>
+          <li>Diseñado para imprimirse o usarse digital</li>
+          <li>Complementa el ebook y el audiolibro</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bundle-together reveal">
+      <div class="bundle-together-text">
+        <p class="bundle-together-title">Los tres juntos, por un solo pago.</p>
+        <p class="bundle-together-sub">Sin suscripción. Sin cargos adicionales. Acceso de por vida a los tres formatos desde el momento de la compra.</p>
+      </div>
+      <div>
+        <a href="#comprar" class="btn-primary">Acceder por $27 USD</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ PROTOCOLO ══════════ -->
+<section class="protocol">
+  <div class="container">
+    <div class="reveal text-center" style="margin-bottom: 64px;">
+      <p class="section-label">Dentro del programa</p>
+      <h2 class="section-title">8 capítulos.<br><em>Un camino con dirección.</em></h2>
+      <p class="section-body text-center">
+        Cada capítulo construye sobre el anterior. No es información suelta — es un protocolo donde cada semana prepara el terreno para la siguiente.
+      </p>
+    </div>
+
+    <div class="phase-block reveal">
+      <div class="phase-header">
+        <span class="phase-num">I</span>
+        <div>
+          <p class="phase-tag">Fase 1 · Días 1–9</p>
+          <p class="phase-name">Entender</p>
+          <p class="phase-days">Por qué tu cuerpo hace lo que hace</p>
+        </div>
+      </div>
+      <div class="chapter-list">
+        <div class="chapter-item">
+          <div class="chapter-num">01</div>
+          <div class="chapter-content">
+            <p class="chapter-title">Tu cuerpo no miente</p>
+            <p class="chapter-sub">Mandíbula, digestión, sueño — el mismo sistema nervioso explicando lo mismo de formas distintas</p>
+          </div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">02</div>
+          <div class="chapter-content">
+            <p class="chapter-title">El nervio vago: tu palanca de calma</p>
+            <p class="chapter-sub">La anatomía de la regulación y cómo activarla desde el cuerpo, no desde la mente</p>
+          </div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">03</div>
+          <div class="chapter-content">
+            <p class="chapter-title">La respiración como protocolo</p>
+            <p class="chapter-sub">Técnicas específicas para cada momento del día — no meditación genérica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block reveal">
+      <div class="phase-header">
+        <span class="phase-num">II</span>
+        <div>
+          <p class="phase-tag">Fase 2 · Días 10–17</p>
+          <p class="phase-name">Regular</p>
+          <p class="phase-days">Herramientas para los tres sistemas más afectados</p>
+        </div>
+      </div>
+      <div class="chapter-list">
+        <div class="chapter-item">
+          <div class="chapter-num">04</div>
+          <div class="chapter-content">
+            <p class="chapter-title">El eje intestino-cerebro</p>
+            <p class="chapter-sub">Por qué lo que pasa en tu intestino determina tu estado de ánimo — y qué hacer con eso</p>
+          </div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">05</div>
+          <div class="chapter-content">
+            <p class="chapter-title">El sueño como herramienta</p>
+            <p class="chapter-sub">Cómo restaurar el descanso cuando el sistema nervioso no sabe apagarse</p>
+          </div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">06</div>
+          <div class="chapter-content">
+            <p class="chapter-title">Tensión muscular y el cuerpo como archivo</p>
+            <p class="chapter-sub">Liberar lo que el cuerpo acumula cuando la amenaza nunca llegó a resolverse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block reveal">
+      <div class="phase-header">
+        <span class="phase-num">III</span>
+        <div>
+          <p class="phase-tag">Fase 3 · Días 18–21</p>
+          <p class="phase-name">Integrar</p>
+          <p class="phase-days">Construir una práctica que dure más allá del día 21</p>
+        </div>
+      </div>
+      <div class="chapter-list">
+        <div class="chapter-item">
+          <div class="chapter-num">07</div>
+          <div class="chapter-content">
+            <p class="chapter-title">Recalibración cognitiva</p>
+            <p class="chapter-sub">Entrenar la mente para no amplificar lo que el cuerpo ya está procesando</p>
+          </div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">08</div>
+          <div class="chapter-content">
+            <p class="chapter-title">El protocolo sostenible</p>
+            <p class="chapter-sub">Tu mínimo viable diario para mantener el sistema nervioso recalibrado de por vida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ PARA QUIÉN ══════════ -->
+<section class="forwho">
+  <div class="container">
+    <div class="reveal text-center">
+      <p class="section-label">Claridad antes de comprar</p>
+      <h2 class="section-title">Recalibra es para ti<br><em>si reconoces esto.</em></h2>
+    </div>
+    <div class="forwho-grid reveal">
+      <div class="forwho-col yes">
+        <p class="forwho-label green">Esto es para ti</p>
+        <p class="forwho-item" data-mark="→">Tienes síntomas físicos de ansiedad que los médicos no encuentran en una analítica estándar</p>
+        <p class="forwho-item" data-mark="→">Tu sistema nervioso parece estar siempre en modo emergencia aunque no haya emergencia</p>
+        <p class="forwho-item" data-mark="→">Has intentado técnicas de relajación pero sin un protocolo estructurado detrás</p>
+        <p class="forwho-item" data-mark="→">Quieres entender el mecanismo, no solo aplicar técnicas sin saber por qué funcionan</p>
+        <p class="forwho-item" data-mark="→">Puedes dedicar 15–30 minutos al día a una práctica que cambia el estado base de tu cuerpo</p>
+      </div>
+      <div class="forwho-col no">
+        <p class="forwho-label muted">Esto no es para ti</p>
+        <p class="forwho-item" data-mark="×">Buscas resultados sin práctica consistente — la neuroplasticidad requiere repetición</p>
+        <p class="forwho-item" data-mark="×">Tienes un diagnóstico médico activo que requiere tratamiento clínico — Recalibra es complemento, no reemplazo</p>
+        <p class="forwho-item" data-mark="×">Quieres un libro de autoayuda con frases motivacionales y listas de tips genéricos</p>
+        <p class="forwho-item" data-mark="×">Esperas que leer el programa sea suficiente sin aplicar las prácticas diarias</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ TESTIMONIOS ══════════ -->
+<section class="testimonials">
+  <div class="container-wide">
+    <div class="reveal text-center">
+      <p class="section-label">Resultados reales</p>
+      <h2 class="section-title">Lo que cambia<br><em>cuando el cuerpo aprende.</em></h2>
+    </div>
+    <div class="testimonial-grid reveal">
+      <div class="testimonial-card">
+        <p class="testimonial-stars">★★★★★</p>
+        <p class="testimonial-text">"Tres semanas. La mandíbula por las mañanas casi desapareció. Dormí 6 horas seguidas por primera vez en meses. No esperaba resultados tan rápidos siendo tan escéptica."</p>
+        <p class="testimonial-author">
+          <strong>Valentina M.</strong>
+          Diseñadora, 34 años · México
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-stars">★★★★★</p>
+        <p class="testimonial-text">"Lo que más me sorprendió fue entender el mecanismo. No solo hacer técnicas a ciegas. Cuando entiendes por qué el nervio vago importa, empiezas a usarlo diferente."</p>
+        <p class="testimonial-author">
+          <strong>Carolina R.</strong>
+          Psicóloga, 41 años · Colombia
+        </p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-stars">★★★★★</p>
+        <p class="testimonial-text">"Empecé por el capítulo del intestino porque lo mío era digestivo. Terminé entendiendo que todo venía del mismo lugar. Una lógica que no había visto en ningún otro recurso."</p>
+        <p class="testimonial-author">
+          <strong>Lucía T.</strong>
+          Emprendedora, 29 años · Argentina
+        </p>
+      </div>
+    </div>
+    <p class="t-note">* Testimonios de muestra. Los resultados individuales varían según la consistencia en la práctica.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ GARANTÍA ══════════ -->
+<section class="guarantee">
+  <div class="container">
+    <div class="reveal">
+      <div class="guarantee-box">
+        <span class="guarantee-icon">🌿</span>
+        <h3 class="guarantee-title">Garantía de 7 días</h3>
+        <p class="guarantee-text">
+          Si en los primeros 7 días después de la compra sientes que Recalibra no es lo que buscabas, te devolvemos el dinero. Sin preguntas, sin formularios complicados.
+          <br><br>
+          <strong>Pero si sigues las prácticas los 21 días, algo va a cambiar.</strong> Eso no lo garantizamos nosotros — lo garantiza la neuroplasticidad.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ PRECIO ══════════ -->
+<section class="pricing" id="comprar">
+  <div class="container">
+    <div class="reveal text-center" style="margin-bottom: 48px;">
+      <p class="section-label">Empieza hoy</p>
+      <h2 class="section-title">Todo lo que necesitas.<br><em>Un solo pago.</em></h2>
+    </div>
+
+    <div class="reveal">
+      <div class="price-card">
+        <p class="price-title">Recalibra</p>
+        <p class="price-sub">Protocolo de 21 días para recuperar tu cuerpo de la ansiedad crónica</p>
+
+        <div class="price-bundle-list">
+          <div class="price-bundle-item">
+            <span class="price-bundle-icon">📖</span>
+            <div>
+              <p class="price-bundle-name">Ebook completo</p>
+              <p class="price-bundle-sub">8 capítulos · Marco científico · Prácticas y ejercicios diarios</p>
+            </div>
+          </div>
+          <div class="price-bundle-item">
+            <span class="price-bundle-icon">🎧</span>
+            <div>
+              <p class="price-bundle-name">Audiolibro narrado</p>
+              <p class="price-bundle-sub">El ebook completo en formato audio · 28 minutos de narración</p>
+            </div>
+          </div>
+          <div class="price-bundle-item">
+            <span class="price-bundle-icon">📋</span>
+            <div>
+              <p class="price-bundle-name">Tracker de 21 días</p>
+              <p class="price-bundle-sub">Seguimiento diario · PDF imprimible o digital</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="price-includes">
+          <li>Acceso inmediato desde cualquier dispositivo</li>
+          <li>Acceso de por vida — sin suscripción</li>
+          <li>Garantía de devolución de 7 días</li>
+          <li>Pago seguro a través de Hotmart</li>
+        </ul>
+
+        <p class="price-amount"><span>$</span>27</p>
+        <p class="price-once">USD · Pago único · Sin cargos adicionales</p>
+
+        <a href="#" class="btn-primary price-cta">Acceder ahora por $27 USD</a>
+
+        <div class="price-security">
+          <span class="security-item">🔒 Pago seguro Hotmart</span>
+          <span class="security-item">✓ Acceso inmediato</span>
+          <span class="security-item">🌿 7 días de garantía</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="reveal text-center">
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2 class="section-title">Lo que suelen<br><em>preguntar antes de comprar.</em></h2>
+    </div>
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <p class="faq-q">¿Necesito conocimientos previos de neurociencia?</p>
+        <p class="faq-a">No. El programa está escrito y narrado para ser completamente accesible. La ciencia está explicada en lenguaje cotidiano — si entiendes cómo te sientes, entiendes el programa.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">¿Cuánto tiempo necesito dedicar cada día?</p>
+        <p class="faq-a">Entre 15 y 30 minutos. La lectura del capítulo toma entre 8 y 12 minutos. La práctica de audio son 10 minutos. El ejercicio escrito está diseñado para ser breve y directo.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">¿En qué formato recibo el audiolibro?</p>
+        <p class="faq-a">A través de la plataforma Hotmart, accesible desde cualquier dispositivo. Puedes escucharlo directamente en la app de Hotmart o descargarlo para escucharlo sin conexión.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">¿Recalibra reemplaza a un terapeuta o médico?</p>
+        <p class="faq-a">No. Recalibra es un recurso educativo e informativo basado en evidencia científica pública. Si tienes un diagnóstico médico activo, practica Recalibra como complemento de tu tratamiento, no como sustituto.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">¿Funciona si ya he probado otras cosas sin resultado?</p>
+        <p class="faq-a">La mayoría de recursos trabajan sobre los pensamientos. Recalibra trabaja sobre el sistema nervioso desde el cuerpo — respiración, intestino, sueño, tensión muscular. Para muchas personas, es el enfoque que faltaba.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">¿Qué pasa si compro y no es lo que esperaba?</p>
+        <p class="faq-a">Tienes 7 días de garantía de devolución completa. Sin cuestionamientos, sin procesos complicados. Escribes a soporte de Hotmart y el reembolso se procesa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA FINAL ══════════ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="final-cta-title">
+        El sistema nervioso<br>
+        puede aprender<br>
+        <em>a soltar la alerta.</em>
+      </h2>
+      <p class="final-cta-sub">
+        No de golpe. No de forma mágica.<br>
+        Con el protocolo correcto — en 21 días.
+      </p>
+      <div class="cta-group">
+        <a href="#comprar" class="btn-primary">Empezar por $27 USD</a>
+        <p class="cta-note">Ebook + Audiolibro + Tracker · Acceso inmediato · Garantía de 7 días</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <p>© 2025 SaludIntegra_ · Todos los derechos reservados</p>
+  <p style="margin-top: 8px;">Este programa es un recurso educativo. No constituye consejo médico, diagnóstico ni tratamiento.</p>
+</footer>
+
+<!-- ══════════ STICKY ══════════ -->
+<div class="sticky-bar">
+  <p class="sticky-text"><strong>Recalibra</strong> — Ebook + Audiolibro + Tracker</p>
+  <p class="sticky-price">$27 USD</p>
+  <a href="#comprar" class="sticky-cta">Acceder ahora</a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  reveals.forEach(el => obs.observe(el));
+
+  const sticky = document.querySelector('.sticky-bar');
+  const heroH = document.querySelector('.hero').offsetHeight;
+  sticky.style.cssText += '; opacity:0; transition:opacity 0.3s ease; pointer-events:none;';
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > heroH * 0.55;
+    sticky.style.opacity = show ? '1' : '0';
+    sticky.style.pointerEvents = show ? 'auto' : 'none';
+  });
+</script>
+</body>
+</html>
